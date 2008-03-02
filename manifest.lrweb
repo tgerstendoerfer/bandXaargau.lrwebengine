@@ -1,0 +1,26 @@
+--[[
+	Lightroom Web Gallery manifest.  This file maps various template files to actual
+	files to be produced for your website.
+	]]
+
+importTags( "lr", "com.adobe.lightroom.default" )
+
+IdentityPlate {
+	destination='content/logo.png',
+	enabledBinding = [[appearance.logo.display]],
+}
+
+AddResources {
+	source='resources',
+	destination='resources',
+}
+
+AddPhotoPages {
+	template='detail.html',
+	destination="content",
+}
+AddGridPages {
+	template='grid.html',
+	rows=model.nonCSS.numRows,
+	columns=model.nonCSS.numCols,
+}

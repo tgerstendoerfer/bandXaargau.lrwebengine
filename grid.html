@@ -1,0 +1,62 @@
+<%
+--[[ Define some variables to make locating other resources easier
+     firstPage was defined in our manifest.]]
+
+    local others = "content"
+    local theRoot = "."
+    local mySize = "thumb"
+%>
+
+<% --[[ Include the page header]] %>
+<%@ include file="head.html" %>
+
+<% --[[ Pagination section ]] %>
+<% if numGridPages > 1 then %>
+  <p class="navlinks">
+    <lr:Pagination>
+      <lr:CurrentPage>
+        <span class="current">$page</span> |
+      </lr:CurrentPage>
+      <lr:OtherPages>
+        <a href="$link">$page</a> |
+      </lr:OtherPages>
+      <lr:PreviousEnabled>
+        <a href="$link"><%= LOC "$$$/AgWPG/Templates/HTML/output/Previous=Zur&uuml;ck" %></a> |
+      </lr:PreviousEnabled>
+      <lr:PreviousDisabled>
+        <%= LOC "$$$/AgWPG/Templates/HTML/output/Previous=Zur&uuml;ck" %> |
+      </lr:PreviousDisabled>
+      <lr:NextEnabled>
+        <a href="$link"><%= LOC "$$$/AgWPG/Templates/HTML/output/Next=Weiter" %></a>
+      </lr:NextEnabled>
+      <lr:NextDisabled>
+        <%= LOC "$$$/AgWPG/Templates/HTML/output/Next=Weiter" %>
+      </lr:NextDisabled>
+    </lr:Pagination>
+  </p>
+<% end %>
+
+<lr:ThumbnailGrid>
+  <lr:GridPhotoCell>
+    <div class="thumbnail"
+         style="width: <%= model.nonCSS.frameWidth %>px; height: <%= model.nonCSS.frameHeight %>px; padding-bottom: 0px;"
+         onclick="window.location.href='$others/<%= image.exportFilename %>.html'"
+      ><div style="padding-top: <%= math.floor((model.nonCSS.frameHeight + 10 - (image.renditions.thumb.height)) / 2) %>px;"
+      ><a href="$others/<%= image.exportFilename %>.html" onclick="return needThumbImgLink;"
+        ><img src="$others/bin/images/thumb/<%= image.exportFilename %>.jpg"
+              id="ID<%= image.imageID %>_thumb"
+              width="$image.renditions.thumb.width"
+              height="$image.renditions.thumb.height"
+              alt="$image.metadata.title" /></a></div></div>
+  </lr:GridPhotoCell>
+  <lr:GridEmptyCell>
+  </lr:GridEmptyCell>
+  <lr:GridRowEnd>
+  </lr:GridRowEnd>
+</lr:ThumbnailGrid>
+</tr>
+</table>
+<div style="clear:both"></div>
+
+<% --[[ Include the page footer]] %>
+<%@ include file="foot.html" %>
