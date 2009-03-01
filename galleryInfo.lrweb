@@ -2,8 +2,8 @@ return {
         LrSdkVersion = 1.3,
         LrSdkMinimumVersion = 1.3, -- minimum SDK version required by this plugin
 
-    title = LOC "$$$/GalleryName/Title=bandXaargau 2008",
-    id = "ch.bandxaargau.2008",
+    title = LOC "$$$/GalleryName/Title=bandXaargau 2009",
+    id = "ch.bandxaargau.2009",
 	galleryType = "lua",
 	maximumGallerySize = 50000,
 	model = {
@@ -111,9 +111,9 @@ return {
 		["lightroomApplication.sizeBeingViewed"] = "thumb",
 		["lightroomApplication.useWatermark"] = false,
 		["metadata.groupDescription.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleGroupDescription=",
-		["metadata.event.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleEventName=bandXaargau 2008",
+		["metadata.event.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleEventName=bandXaargau 2009",
 		["metadata.clubName.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleClubName=Club Name",
-		["metadata.date.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleDate=dd. M&auml;rz 2008",
+		["metadata.date.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleDate=dd. M&auml;rz 2009",
 
 		["metadata.homePage.value"] = {
 			value = "index.html",
