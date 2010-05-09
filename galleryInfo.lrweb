@@ -2,8 +2,8 @@ return {
         LrSdkVersion = 1.3,
         LrSdkMinimumVersion = 1.3, -- minimum SDK version required by this plugin
 
-    title = LOC "$$$/GalleryName/Title=bandXaargau 2009",
-    id = "ch.bandxaargau.2009",
+    title = LOC "$$$/GalleryName/Title=bandXaargau 2010",
+    id = "ch.bandxaargau.2010",
 	galleryType = "lua",
 	maximumGallerySize = 50000,
 	model = {
@@ -111,9 +111,9 @@ return {
 		["lightroomApplication.sizeBeingViewed"] = "thumb",
 		["lightroomApplication.useWatermark"] = false,
 		["metadata.groupDescription.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleGroupDescription=",
-		["metadata.event.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleEventName=bandXaargau 2009",
+		["metadata.event.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleEventName=bandXaargau 2010",
 		["metadata.clubName.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleClubName=Club Name",
-		["metadata.date.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleDate=dd. M&auml;rz 2009",
+		["metadata.date.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleDate=dd. M&auml;rz 2010",
 
 		["metadata.homePage.value"] = {
 			value = "index.html",
@@ -142,6 +142,10 @@ return {
 			enabled = true,
 			value = "{{com.adobe.title}}",
 		},
+		["perImageSetting.copyright"] = {
+			enabled = true,
+			value = "{{com.adobe.copyright}}",
+		},
 	},
         properties = {
                 perImage = {
@@ -152,6 +156,10 @@ return {
                         {
                                 id = 'description',
                                 title = LOC "$$$/WPG/HTML/CSS/properties/ImageCaption=Caption",
+                        },
+                        {
+                                id = 'copyright',
+                                title = LOC "$$$/WPG/HTML/CSS/properties/ImageCopyright=Copyright",
                         },
                 },
         },
