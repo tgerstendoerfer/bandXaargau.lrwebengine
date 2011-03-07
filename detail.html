@@ -38,7 +38,7 @@
        height="$image.renditions.large.height"
        />
 </a>
-<p><span class="PhotoID">$image.exportFilename</span> <span class="captionTitle">$image.metadata.title</span></p>
+<p><span class="PhotoID"><%= string.gsub(image.exportFilename, "_", "-") %></span> <span class="captionTitle">$image.metadata.title</span></p>
 <p class="Comment">$image.metadata.description</p>
 
 <% --[[ Include the page footer]] %>

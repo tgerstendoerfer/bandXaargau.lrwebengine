@@ -1,25 +1,25 @@
 return {
-        LrSdkVersion = 1.3,
-        LrSdkMinimumVersion = 1.3, -- minimum SDK version required by this plugin
+        LrSdkVersion = 2.0,
+        LrSdkMinimumVersion = 2.0, -- minimum SDK version required by this plugin
 
-    title = LOC "$$$/GalleryName/Title=bandXaargau 2010",
-    id = "ch.bandxaargau.2010",
+    title = "bandXaargau 2011",
+    id = "ch.bandxaargau.2011",
 	galleryType = "lua",
 	maximumGallerySize = 50000,
 	model = {
-		["agmSizes.large.cropMode"] = "normal",
-		["agmSizes.large.height"] = function() return agmSizes.large.width end,
-		["agmSizes.large.maxHeight"] = 2701,
-		["agmSizes.large.maxWidth"] = 2701,
-		["agmSizes.large.metadataExportMode"] = function() return agmSizes.thumb.metadataExportMode end,
-		["agmSizes.large.width"] = 500,
-		["agmSizes.thumb.cropMode"] = "normal",
-		["agmSizes.thumb.height"] = 150,
-		["agmSizes.thumb.metadataExportMode"] = "copyright",
-		["agmSizes.thumb.width"] = 150,
-		["nonCSS.frameHeight"] = function() return agmSizes.thumb.height + 10 end,
-		["nonCSS.frameWidth"] = function() return agmSizes.thumb.width + 10 end,
-		["agmSizes.tracking"] = false,
+		["photoSizes.large.cropMode"] = "normal",
+		["photoSizes.large.height"] = function() return photoSizes.large.width end,
+		["photoSizes.large.maxHeight"] = 2701,
+		["photoSizes.large.maxWidth"] = 2701,
+		["photoSizes.large.metadataExportMode"] = function() return photoSizes.thumb.metadataExportMode end,
+		["photoSizes.large.width"] = 500,
+		["photoSizes.thumb.cropMode"] = "normal",
+		["photoSizes.thumb.height"] = 150,
+		["photoSizes.thumb.metadataExportMode"] = "copyright",
+		["photoSizes.thumb.width"] = 150,
+		["nonCSS.frameHeight"] = function() return photoSizes.thumb.height + 10 end,
+		["nonCSS.frameWidth"] = function() return photoSizes.thumb.width + 10 end,
+		["photoSizes.tracking"] = false,
 		["appearance.body.background-color"] = "#ffffff",
 		["appearance.body.cssID"] = "body",
 		["appearance.borderBottom.border-bottom"] = function()
@@ -69,11 +69,11 @@ return {
 		["appearance.previewFull.background-color"] = "#ffffff",
 		["appearance.previewFull.cssID"] = "#previewFull",
 		["appearance.previewFull.width"] = function()
-			return string.format( "%dpx", math.max( nonCSS.numCols * 160 + 2, ( nonCSS.showImageBorderLarge and nonCSS.imageBorderWidth * 2 or 0 ) + agmSizes.large.width + 30 ) ) 
+			return string.format( "%dpx", math.max( nonCSS.numCols * 160 + 2, ( nonCSS.showImageBorderLarge and nonCSS.imageBorderWidth * 2 or 0 ) + photoSizes.large.width + 30 ) ) 
 		end,
 		["appearance.liveUpdateImageSize.cssID"] = "#previewImage",
 		["appearance.liveUpdateImageSize.maxSize"] = function()
-			return agmSizes.large.width
+			return photoSizes.large.width
 		end,
 		["appearance.siteTitle.cssID"] = "#liveUpdateSiteTitle",
 		["appearance.sitetitle.border-bottom"] = function()
@@ -82,7 +82,7 @@ return {
 		["appearance.sitetitle.cssID"] = "#sitetitle",
 		["appearance.stage2.cssID"] = "#stage2",
 		["appearance.stage2.width"] = function()
-			return string.format( "%dpx", math.max( nonCSS.numCols * 161 + 1, ( nonCSS.showImageBorderLarge and nonCSS.imageBorderWidth * 2 or 0 ) + agmSizes.large.width + 30 ) ) 
+			return string.format( "%dpx", math.max( nonCSS.numCols * 161 + 1, ( nonCSS.showImageBorderLarge and nonCSS.imageBorderWidth * 2 or 0 ) + photoSizes.large.width + 30 ) ) 
 		end,
 		["appearance.stage.cssID"] = "#stage",
 		["appearance.stage.width"] = function()
@@ -100,20 +100,23 @@ return {
 		["appearance.thumbnailHover.cssID"] = ".selectedThumbnail, .thumbnail:hover",
 		["appearance.wrapper_large.cssID"] = "#wrapper_large",
 		["appearance.wrapper_large.width"] = function()
-			return string.format( "%dpx", math.max( nonCSS.numCols * 161 + 1, ( nonCSS.showImageBorderLarge and nonCSS.imageBorderWidth * 2 or 0 ) + agmSizes.large.width + 30 ) ) 
+			return string.format( "%dpx", math.max( nonCSS.numCols * 161 + 1, ( nonCSS.showImageBorderLarge and nonCSS.imageBorderWidth * 2 or 0 ) + photoSizes.large.width + 30 ) ) 
 		end,
 		["appearance.wrapper_thumb.cssID"] = "#wrapper_thumb",
 		["appearance.wrapper_thumb.width"] = function()
 			return string.format( "%dpx", nonCSS.numCols * 161 + 1 ) 
 		end,
 		["lightroomApplication.identityPlateExport"] = "(main)",
-		["lightroomApplication.jpegQuality"] = 85,
+		["lightroomApplication.jpegQuality"] = 90,
 		["lightroomApplication.sizeBeingViewed"] = "thumb",
 		["lightroomApplication.useWatermark"] = false,
-		["metadata.groupDescription.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleGroupDescription=",
-		["metadata.event.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleEventName=bandXaargau 2010",
-		["metadata.clubName.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleClubName=Club Name",
-		["metadata.date.value"] = LOC "$$$/AgWPG/Templates/HTML/DefaultValues/ExampleDate=dd. M&auml;rz 2010",
+		["lightroomApplication.watermarkID"] = "",
+		["lightroomApplication.outputSharpeningOn"] = true,
+		["lightroomApplication.outputSharpening"] = 3,
+		["metadata.groupDescription.value"] = "",
+		["metadata.event.value"] = "bandXaargau 2011",
+		["metadata.clubName.value"] = "Stadt Name",
+		["metadata.date.value"] = "dd. März 2011",
 
 		["metadata.homePage.value"] = {
 			value = "index.html",
@@ -191,7 +194,7 @@ return {
 				WPGPanelUI.content_column {
 					WPGPanelUI.row {
 						f:static_text  {
-							title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/ClubNameTitle=Club Name",
+							title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/ClubNameTitle=Club oder Stadt",
 						},
 						f:mru_popup_view {
 							place_horizontal = 1,
@@ -353,7 +356,7 @@ return {
 				WPGPanelUI.slider_content_column {
 					WPGPanelUI.slider_row {
 						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/MaximumImageSizeLabel/LargePreview=Size",
-						property = "agmSizes.large.width",
+						property = "photoSizes.large.width",
 						tracking = "nonCSS.tracking",
 						unit = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/ImageSizeUnit=px",
 						propMax = 2071,
@@ -383,31 +386,12 @@ return {
 						precision = 0,
 					},
 					WPGPanelUI.metadataModeControl {
-						bindingValue = "agmSizes.thumb.metadataExportMode",
+						bindingValue = "photoSizes.thumb.metadataExportMode",
 					},
 				},
-				WPGPanelUI.slider_content_column {
-					WPGPanelUI.checkbox_row {
-						title = LOC( "$$$/AgWPG/Templates/HTML/Panel/Checkbox/UseWatermark=Add Copyright Watermark" ),
-						bindingValue = [[lightroomApplication.useWatermark]],
-						indentWithSliders=true,
-					},
-				},
+				f:watermark_section( controller ),
 			},
 		},
 	}
 	end,
-	
-	galleryOptions = { 
-		thumbnail = "resources/version_info.png",
-		galleryName = LOC "$$$/AgWPG/Templates/HTML/Title=Lightroom HTML Gallery",
-		galleryDescription = {
-			 LOC "$$$/AgWPG/Templates/HTML/Description=This HTML-driven web photo gallery is provided by Adobe with the first release of Lightroom^T.  Features include:",
-			[[]],
-			LOC "$$$/AgWPG/Templates/HTML/Description2=^U+0020^B Text Labeling",
-			LOC "$$$/AgWPG/Templates/HTML/Description4=^U+0020^B Layout and Color Controls",
-			LOC "$$$/AgWPG/Templates/HTML/Description5=^U+0020^B Two Viewing Levels",
-		},
-		galleryVersion = [[1.3]],
-	}
 }
