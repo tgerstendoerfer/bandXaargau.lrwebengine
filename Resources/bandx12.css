@@ -1,17 +1,18 @@
 /*
- * CSS style sheet for the bandXaargau 2011 photo gallery.
+ * CSS style sheet for the bandXaargau 2012 photo gallery.
  * Original design by Gianni Furger http://www.zeitgeist.ch
  * Adapted by Thomas Gerstendoerfer thomas@gerstendoerfer.com 
  */
 
 body {
-	color: #000;
+	color: #666;
 	background-color: #fff;
-	font-family: Arial, Verdana, Sans-Serif, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	margin-left: 30px;
 }
 
 h1 {
+	color: #000;
 	font-size: 12pt;
 	text-transform: uppercase;
 }
@@ -37,11 +38,11 @@ div.thumbnail {
 	text-align: center;
 }
 div.thumbnail img {
-	border: 2px solid #000 !important;
+	border: 2px solid #666 !important;
 }
 
 img.photo {
-	border: 4px solid #000;
+	border: 4px solid #666;
 }
 
 .captionTitle {
@@ -58,7 +59,7 @@ p.Comment {
 }
 
 a:link, a:visited, a:active, a:hover {
-	color: #0062a9;
+	color: #014F8D;
 	font-weight: bold;
 	text-decoration: none;
 }

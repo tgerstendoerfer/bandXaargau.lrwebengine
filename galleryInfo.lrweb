@@ -2,8 +2,8 @@ return {
         LrSdkVersion = 2.0,
         LrSdkMinimumVersion = 2.0, -- minimum SDK version required by this plugin
 
-    title = "bandXaargau 2011",
-    id = "ch.bandxaargau.2011",
+    title = "bandXaargau 2012",
+    id = "ch.bandxaargau.2012",
 	galleryType = "lua",
 	maximumGallerySize = 50000,
 	model = {
@@ -114,9 +114,9 @@ return {
 		["lightroomApplication.outputSharpeningOn"] = true,
 		["lightroomApplication.outputSharpening"] = 3,
 		["metadata.groupDescription.value"] = "",
-		["metadata.event.value"] = "bandXaargau 2011",
+		["metadata.event.value"] = "bandXaargau 2012",
 		["metadata.clubName.value"] = "Stadt Name",
-		["metadata.date.value"] = "dd. März 2011",
+		["metadata.date.value"] = "dd. März 2012",
 
 		["metadata.homePage.value"] = {
 			value = "index.html",
