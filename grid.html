@@ -7,8 +7,85 @@
     local mySize = "thumb"
 %>
 
-<% --[[ Include the page header]] %>
-<%@ include file="head.html" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="de">
+<head>
+
+<% --[[ HTML page metadata and stylesheets ]] %>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>$model.metadata.event.value - $model.metadata.clubName.value - $model.metadata.date.value</title>
+<link rel="stylesheet" type="text/css" media="screen" href="$theRoot/resources/bandx13.css" >
+
+<% --[[ Scripting support for photoswipe ]] %>
+<link href="$theRoot/resources/photoswipe.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" src="$theRoot/resources/klass.min.js"></script>
+<script type="text/javascript" src="$theRoot/resources/code.photoswipe-3.0.5.min.js"></script>
+
+
+<script type="text/javascript">
+
+	(function(window, PhotoSwipe){
+	
+		document.addEventListener('DOMContentLoaded', function(){
+		
+			var
+				options = {},
+				instance = PhotoSwipe.attach( window.document.querySelectorAll('.thumbnail a'), options );
+		
+		}, false);
+		
+		
+	}(window, window.Code.PhotoSwipe));
+	
+</script>
+
+<% --[[ Scripting support for rollovers and (when previewed in Lightroom) live Update, photobin syncing ]] %>
+<script type="text/javascript">
+window.AgMode = "$mode";
+cellRolloverColor="#A1A1A1";
+cellColor="#949494";
+<% if mode == 'preview' then %>
+window.AgOnLoad = function() {
+    tellLightroomWhatImagesWeAreUsing(); 
+    setActiveImageSize( "<%= mySize %>" );
+    <% if image then %>
+    callCallback( "showInPhotoBin", "$image.imageID" );
+    <% end %>
+}
+<% end %>
+</script>
+<script type="text/javascript" src="$theRoot/resources/live_update.js"></script>
+</head>
+
+<% --[[ The main HTML page begins here ]] %>
+<body>
+
+<div id="main">
+<%
+	local function fixUrlIfRelative( url )
+		url = tostring( url ) or ""
+		if string.find( url, "[a-z]+:" ) then
+			-- this url starts with something like http: or mailto:, so leave it alone
+		else
+			-- this url is probably relative, so we need to tack on theRoot to the beginning
+			-- of it, so no matter where the page we're currently viewing is placed in the 
+			-- output hierarchy, this link will still point to the same page
+			url = theRoot .. "/" .. url;
+		end
+		return url
+	end
+%>
+
+<% --[[ Page header titles ]] %>
+<h1>$model.metadata.event.value
+  &#150; <span onclick="clickTarget( this, 'metadata.clubName.value' );" id="metadata.clubName.value">$model.metadata.clubName.value</span>
+  &#150; <span onclick="clickTarget( this, 'metadata.date.value' );" id="metadata.date.value">$model.metadata.date.value</span>
+</h1>
+<p onclick="clickTarget( this, 'metadata.groupDescription.value' );" id="metadata.groupDescription.value" class="textColor">$model.metadata.groupDescription.value</p>
 
 <% --[[ Pagination section ]] %>
 <% if numGridPages > 1 then %>
@@ -40,10 +117,9 @@
   <lr:GridPhotoCell>
     <div class="thumbnail"
          style="width: <%= model.nonCSS.frameWidth %>px; height: <%= model.nonCSS.frameHeight %>px; padding-bottom: 0px;"
-         onclick="window.location.href='$others/<%= image.exportFilename %>.html'"
       ><div style="padding-top: <%= math.floor((model.nonCSS.frameHeight + 10 - (image.renditions.thumb.height)) / 2) %>px;"
-      ><a href="$others/<%= image.exportFilename %>.html" onclick="return needThumbImgLink;"
-        ><img src="$others/bin/images/thumb/<%= image.exportFilename %>.jpg"
+      ><a href="$others/large/<%= image.exportFilename %>.jpg" title="$image.metadata.title"
+        ><img src="$others/thumb/<%= image.exportFilename %>.jpg"
               id="ID<%= image.imageID %>_thumb"
               width="$image.renditions.thumb.width"
               height="$image.renditions.thumb.height"
@@ -58,5 +134,10 @@
 </table>
 <div style="clear:both"></div>
 
-<% --[[ Include the page footer]] %>
-<%@ include file="foot.html" %>
+<p class="footer"><%= (image and image.metadata.copyright) or "&copy; 2013 Thomas Gerstendörfer" %>. Alle Rechte vorbehalten. Verwendung dieser Bilder nur mit ausdr&uuml;cklicher schriftlicher Zustimmung des Fotografen. Bei&nbsp;Fragen:&nbsp;<a href="mailto:thomas@gerstendoerfer.com">thomas@gerstendoerfer.com</a></p>
+<p class="footer"><a href="http://www.bandxaargau.ch/"/>bandXaargau 2013</a></p>
+
+</div>
+
+</body>
+</html>

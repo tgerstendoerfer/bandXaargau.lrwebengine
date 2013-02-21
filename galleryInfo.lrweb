@@ -2,8 +2,8 @@ return {
         LrSdkVersion = 2.0,
         LrSdkMinimumVersion = 2.0, -- minimum SDK version required by this plugin
 
-    title = "bandXaargau 2012",
-    id = "ch.bandxaargau.2012",
+    title = "bandXaargau 2013",
+    id = "ch.bandxaargau.2013",
 	galleryType = "lua",
 	maximumGallerySize = 50000,
 	model = {
@@ -12,11 +12,13 @@ return {
 		["photoSizes.large.maxHeight"] = 2701,
 		["photoSizes.large.maxWidth"] = 2701,
 		["photoSizes.large.metadataExportMode"] = function() return photoSizes.thumb.metadataExportMode end,
-		["photoSizes.large.width"] = 500,
+		["photoSizes.large.width"] = 960,
+		["photoSizes.large.directory"] = "large",
 		["photoSizes.thumb.cropMode"] = "normal",
 		["photoSizes.thumb.height"] = 150,
 		["photoSizes.thumb.metadataExportMode"] = "copyright",
 		["photoSizes.thumb.width"] = 150,
+		["photoSizes.thumb.directory"] = "thumb",
 		["nonCSS.frameHeight"] = function() return photoSizes.thumb.height + 10 end,
 		["nonCSS.frameWidth"] = function() return photoSizes.thumb.width + 10 end,
 		["photoSizes.tracking"] = false,
@@ -106,7 +108,6 @@ return {
 		["appearance.wrapper_thumb.width"] = function()
 			return string.format( "%dpx", nonCSS.numCols * 161 + 1 ) 
 		end,
-		["lightroomApplication.identityPlateExport"] = "(main)",
 		["lightroomApplication.jpegQuality"] = 90,
 		["lightroomApplication.sizeBeingViewed"] = "thumb",
 		["lightroomApplication.useWatermark"] = false,
@@ -114,9 +115,9 @@ return {
 		["lightroomApplication.outputSharpeningOn"] = true,
 		["lightroomApplication.outputSharpening"] = 3,
 		["metadata.groupDescription.value"] = "",
-		["metadata.event.value"] = "bandXaargau 2012",
+		["metadata.event.value"] = "bandXaargau 2013",
 		["metadata.clubName.value"] = "Stadt Name",
-		["metadata.date.value"] = "dd. März 2012",
+		["metadata.date.value"] = "dd. März 2013",
 
 		["metadata.homePage.value"] = {
 			value = "index.html",
@@ -129,7 +130,7 @@ return {
 		["nonCSS.imageBorderWidth"] = 0,
 		["nonCSS.largeImageBorderColor"] = "#000000",
 		["nonCSS.numCols"] = 5,
-		["nonCSS.numRows"] = 4,
+		["nonCSS.numRows"] = 80,
 		["nonCSS.sectionBorderColor"] = "#7F7F7F",
 		["nonCSS.showImageBorderLarge"] = false,
 		["nonCSS.showImageBorderThumb"] = false,
@@ -250,119 +251,6 @@ return {
 						value = bind "metadata.groupDescription.value",
 						tracking = bind "metadata.groupDescription.tracking",
 						text_color=AgPanel.bright_text_color,
-					},
-				},
-			},
-		},
-		colorPalette = WPGPanelUI.mainView {
-			bindToObject = controller,
-			WPGPanelUI.subdivided_sections {
-				WPGPanelUI.color_content_column {
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "appearance.textColor.color",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/TextColor=Text",
-					},
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "appearance.detailText.color",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/DetailTextColor=Detail Text",
-					},
-				},
-				WPGPanelUI.color_content_column {
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "appearance.body.background-color",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/BackgroundColors=Background",
-					},
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "appearance.previewFull.background-color",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/DetailMatteColor=Detail Matte",
-					},
-				},
-				WPGPanelUI.color_content_column {
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "nonCSS.cellColor",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/CellsStatic=Cells",
-					},
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "nonCSS.cellRolloverColor",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/CellRollover=Rollover",
-					},
-					WPGPanelUI.label_and_color_row {
-						bindingValue = "nonCSS.cellBorderColor",
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Colors/GridLines=Grid Lines",
-					},
-				},
-			},
-		},
-		appearanceConfiguration = WPGPanelUI.mainView {
-			bindToObject = controller,
-			WPGPanelUI.subdivided_sections {
-				WPGPanelUI.header_section_label {
-					title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/Appearance/Common=Common Settings",
-				},
-				WPGPanelUI.header_section {
-					WPGPanelUI.checkbox_and_color_row {
-						{
-							title = LOC( "$$$/AgWPG/Templates/HTML/Panel/Checkbox/SectionBorders=Section Borders" ),
-							bindingValue = [[nonCSS.showSectionBorder]],
-						},
-						{
-							bindingValue = [[nonCSS.sectionBorderColor]],
-						},
-					},
-				},
-			},
-			WPGPanelUI.subdivided_sections {
-				WPGPanelUI.header_section {
-					f:static_text  {
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/GridPages=Grid Pages",
-						place_vertical = 0.5,
-						margin_left = AgPanel.content_margin,
-					},
-					WPGPanelUI.warning_icon {
-						visibility = {
-							key = "lightroomApplication.sizeBeingViewed",
-							whenNotEqual = "thumb",
-						},
-					},
-				},
-				WPGPanelUI.content_column {
-					f:row_column_picker {
-						fill_horizontal = 1,
-						rows = bind "nonCSS.numRows",
-						columns = bind "nonCSS.numCols",
-						maxrows = 5,
-						maxcolumns = 8,
-						minrows = 3,
-						mincolumns = 3,
-						tooltip = LOC "$$$/AgWPG/Views/HTML/Panel/RowColumnPicker/InstructionText=Click anywhere in the grid to set dimensions.",
-						fill_horizontal=1,
-					},
-				},
-			},
-			WPGPanelUI.subdivided_sections {
-				WPGPanelUI.header_section {
-					f:static_text  {
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/ImagePages=Image Pages",
-						place_vertical = 0.5,
-						margin_left = AgPanel.content_margin,
-					},
-					WPGPanelUI.warning_icon {
-						visibility = {
-							key = "lightroomApplication.sizeBeingViewed",
-							whenNotEqual = "large",
-						},
-					},
-				},
-				WPGPanelUI.slider_content_column {
-					WPGPanelUI.slider_row {
-						title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/MaximumImageSizeLabel/LargePreview=Size",
-						property = "photoSizes.large.width",
-						tracking = "nonCSS.tracking",
-						unit = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/ImageSizeUnit=px",
-						propMax = 2071,
-						propMin = 300,
-						width_in_digits = 4,
-						precision = 0,
 					},
 				},
 			},
