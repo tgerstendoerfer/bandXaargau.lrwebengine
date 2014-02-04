@@ -13,13 +13,13 @@
 <% --[[ HTML page metadata and stylesheets ]] %>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>$model.metadata.event.value - $model.metadata.clubName.value - $model.metadata.date.value</title>
 <link rel="stylesheet" type="text/css" media="screen" href="$theRoot/resources/bandx13.css" >
 
 <% --[[ Scripting support for photoswipe ]] %>
-<link href="$theRoot/resources/photoswipe.css" type="text/css" rel="stylesheet" />
+<link href="$theRoot/resources/photoswipe.css" type="text/css" rel="stylesheet">
 
 <script type="text/javascript" src="$theRoot/resources/klass.min.js"></script>
 <script type="text/javascript" src="$theRoot/resources/code.photoswipe-3.0.5.min.js"></script>
@@ -122,15 +122,13 @@ window.AgOnLoad = function() {
               id="ID<%= image.imageID %>_thumb"
               width="$image.renditions.thumb.width"
               height="$image.renditions.thumb.height"
-              alt="$image.metadata.title" /></a></div></div>
+              alt="$image.metadata.title"></a></div></div>
   </lr:GridPhotoCell>
 </lr:ThumbnailGrid>
-</tr>
-</table>
 <div style="clear:both"></div>
 
 <p class="footer"><%= (image and image.metadata.copyright) or "&copy; 2013 Thomas Gerstendörfer" %>. Alle Rechte vorbehalten. Verwendung dieser Bilder nur mit ausdr&uuml;cklicher schriftlicher Zustimmung des Fotografen. Bei&nbsp;Fragen:&nbsp;<a href="mailto:thomas@gerstendoerfer.com">thomas@gerstendoerfer.com</a></p>
-<p class="footer"><a href="http://www.bandxaargau.ch/"/>bandXaargau 2013</a></p>
+<p class="footer"><a href="http://www.bandxaargau.ch/">bandXaargau 2013</a></p>
 
 </div>
 
