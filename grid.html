@@ -79,32 +79,6 @@ window.AgOnLoad = function() {
 </h1>
 <p onclick="clickTarget( this, 'metadata.groupDescription.value' );" id="metadata.groupDescription.value" class="textColor">$model.metadata.groupDescription.value</p>
 
-<% --[[ Pagination section ]] %>
-<% if numGridPages > 1 then %>
-  <p class="navlinks">
-    <lr:Pagination>
-      <lr:CurrentPage>
-        <span class="current">$page</span> |
-      </lr:CurrentPage>
-      <lr:OtherPages>
-        <a href="$link">$page</a> |
-      </lr:OtherPages>
-      <lr:PreviousEnabled>
-        <a href="$link"><%= LOC "$$$/AgWPG/Templates/HTML/output/Previous=Zur&uuml;ck" %></a> |
-      </lr:PreviousEnabled>
-      <lr:PreviousDisabled>
-        <%= LOC "$$$/AgWPG/Templates/HTML/output/Previous=Zur&uuml;ck" %> |
-      </lr:PreviousDisabled>
-      <lr:NextEnabled>
-        <a href="$link"><%= LOC "$$$/AgWPG/Templates/HTML/output/Next=Weiter" %></a>
-      </lr:NextEnabled>
-      <lr:NextDisabled>
-        <%= LOC "$$$/AgWPG/Templates/HTML/output/Next=Weiter" %>
-      </lr:NextDisabled>
-    </lr:Pagination>
-  </p>
-<% end %>
-
 <lr:ThumbnailGrid>
   <lr:GridPhotoCell>
     <div class="thumbnail"

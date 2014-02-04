@@ -12,6 +12,6 @@ AddResources {
 
 AddGridPages {
 	template='grid.html',
-	rows=5,
-	columns=80,
+	rows=1000,
+	columns=50,
 }
