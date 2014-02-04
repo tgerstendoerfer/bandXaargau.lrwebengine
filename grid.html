@@ -2,7 +2,6 @@
 --[[ Define some variables to make locating other resources easier
      firstPage was defined in our manifest.]]
 
-    local others = "content"
     local theRoot = "."
     local mySize = "thumb"
 %>
@@ -118,8 +117,8 @@ window.AgOnLoad = function() {
     <div class="thumbnail"
          style="width: <%= model.photoSizes.thumb.width + 10 %>px; height: <%= model.photoSizes.thumb.height + 10 %>px; padding-bottom: 0px;"
       ><div style="padding-top: <%= math.floor((model.photoSizes.thumb.height + 20 - (image.renditions.thumb.height)) / 2) %>px;"
-      ><a href="$others/large/<%= image.exportFilename %>.jpg" title="$image.metadata.title"
-        ><img src="$others/thumb/<%= image.exportFilename %>.jpg"
+      ><a href="large/<%= image.exportFilename %>.jpg" title="$image.metadata.title"
+        ><img src="thumb/<%= image.exportFilename %>.jpg"
               id="ID<%= image.imageID %>_thumb"
               width="$image.renditions.thumb.width"
               height="$image.renditions.thumb.height"

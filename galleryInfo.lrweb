@@ -34,7 +34,6 @@ return {
 			value = "index.html",
 			metadata = { [ 'ag:dataType' ] = 'webLink' },
 		},
-		["nonCSS.imageBase"] = "content",
 		["perImageSetting.description"] = {
 			enabled = true,
 			value = "{{com.adobe.caption}}",
