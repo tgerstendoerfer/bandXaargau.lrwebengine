@@ -1,7 +1,7 @@
 --[[
-	Lightroom Web Gallery manifest.  This file maps various template files to actual
-	files to be produced for your website.
-	]]
+	Lightroom Web Gallery manifest.
+	Maps template files to the actual files to be produced.
+]]
 
 importTags( "lr", "com.adobe.lightroom.default" )
 
