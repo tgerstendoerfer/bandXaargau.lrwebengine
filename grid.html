@@ -116,8 +116,8 @@ window.AgOnLoad = function() {
 <lr:ThumbnailGrid>
   <lr:GridPhotoCell>
     <div class="thumbnail"
-         style="width: <%= model.nonCSS.frameWidth %>px; height: <%= model.nonCSS.frameHeight %>px; padding-bottom: 0px;"
-      ><div style="padding-top: <%= math.floor((model.nonCSS.frameHeight + 10 - (image.renditions.thumb.height)) / 2) %>px;"
+         style="width: <%= model.photoSizes.thumb.width + 10 %>px; height: <%= model.photoSizes.thumb.height + 10 %>px; padding-bottom: 0px;"
+      ><div style="padding-top: <%= math.floor((model.photoSizes.thumb.height + 20 - (image.renditions.thumb.height)) / 2) %>px;"
       ><a href="$others/large/<%= image.exportFilename %>.jpg" title="$image.metadata.title"
         ><img src="$others/thumb/<%= image.exportFilename %>.jpg"
               id="ID<%= image.imageID %>_thumb"

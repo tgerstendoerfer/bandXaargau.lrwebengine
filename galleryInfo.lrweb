@@ -17,8 +17,6 @@ return {
 		["photoSizes.thumb.metadataExportMode"] = "copyright",
 		["photoSizes.thumb.width"] = 150,
 		["photoSizes.thumb.directory"] = "thumb",
-		["nonCSS.frameHeight"] = function() return photoSizes.thumb.height + 10 end,
-		["nonCSS.frameWidth"] = function() return photoSizes.thumb.width + 10 end,
 		["photoSizes.tracking"] = false,
 		["appearance.body.background-color"] = "#ffffff",
 		["appearance.body.cssID"] = "body",
