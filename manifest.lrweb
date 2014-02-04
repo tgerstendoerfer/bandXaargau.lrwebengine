@@ -12,6 +12,6 @@ AddResources {
 
 AddGridPages {
 	template='grid.html',
-	rows=model.nonCSS.numRows,
-	columns=model.nonCSS.numCols,
+	rows=5,
+	columns=80,
 }

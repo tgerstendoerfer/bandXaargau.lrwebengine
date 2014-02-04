@@ -126,8 +126,6 @@ return {
 		["nonCSS.imageBase"] = "content",
 		["nonCSS.imageBorderWidth"] = 0,
 		["nonCSS.largeImageBorderColor"] = "#000000",
-		["nonCSS.numCols"] = 5,
-		["nonCSS.numRows"] = 80,
 		["nonCSS.sectionBorderColor"] = "#7F7F7F",
 		["nonCSS.showImageBorderLarge"] = false,
 		["nonCSS.showImageBorderThumb"] = false,
