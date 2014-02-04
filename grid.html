@@ -1,8 +1,4 @@
 <%
---[[ Define some variables to make locating other resources easier
-     firstPage was defined in our manifest.]]
-
-    local theRoot = "."
     local mySize = "thumb"
 %>
 <!DOCTYPE html>
@@ -12,10 +8,10 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>$model.metadata.event.value - $model.metadata.clubName.value - $model.metadata.date.value</title>
-<link rel="stylesheet" href="$theRoot/resources/bandx13.css" >
-<link rel="stylesheet" href="$theRoot/resources/photoswipe.css">
-<script type="text/javascript" src="$theRoot/resources/klass.min.js"></script>
-<script type="text/javascript" src="$theRoot/resources/code.photoswipe-3.0.5.min.js"></script>
+<link rel="stylesheet" href="resources/bandx13.css" >
+<link rel="stylesheet" href="resources/photoswipe.css">
+<script type="text/javascript" src="resources/klass.min.js"></script>
+<script type="text/javascript" src="resources/code.photoswipe-3.0.5.min.js"></script>
 
 
 <script type="text/javascript">
@@ -50,29 +46,14 @@ window.AgOnLoad = function() {
 }
 <% end %>
 </script>
-<script type="text/javascript" src="$theRoot/resources/live_update.js"></script>
+<script type="text/javascript" src="resources/live_update.js"></script>
 </head>
 
 <% --[[ The main HTML page begins here ]] %>
 <body>
 
 <div id="main">
-<%
-	local function fixUrlIfRelative( url )
-		url = tostring( url ) or ""
-		if string.find( url, "[a-z]+:" ) then
-			-- this url starts with something like http: or mailto:, so leave it alone
-		else
-			-- this url is probably relative, so we need to tack on theRoot to the beginning
-			-- of it, so no matter where the page we're currently viewing is placed in the 
-			-- output hierarchy, this link will still point to the same page
-			url = theRoot .. "/" .. url;
-		end
-		return url
-	end
-%>
 
-<% --[[ Page header titles ]] %>
 <h1>$model.metadata.event.value
   &ndash; <span onclick="clickTarget( this, 'metadata.clubName.value' );" id="metadata.clubName.value">$model.metadata.clubName.value</span>
   &ndash; <span onclick="clickTarget( this, 'metadata.date.value' );" id="metadata.date.value">$model.metadata.date.value</span>
