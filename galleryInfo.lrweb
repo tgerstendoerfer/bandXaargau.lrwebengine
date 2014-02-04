@@ -1,9 +1,9 @@
 return {
-        LrSdkVersion = 2.0,
-        LrSdkMinimumVersion = 2.0, -- minimum SDK version required by this plugin
+	LrSdkVersion = 2.0,
+	LrSdkMinimumVersion = 2.0, -- minimum SDK version required by this plugin
 
-    title = "bandXaargau 2013",
-    id = "ch.bandxaargau.2013",
+	title = "bandXaargau 2013",
+	id = "ch.bandxaargau.2013",
 	galleryType = "lua",
 	maximumGallerySize = 50000,
 	model = {
@@ -114,6 +114,7 @@ return {
 		["lightroomApplication.watermarkID"] = "",
 		["lightroomApplication.outputSharpeningOn"] = true,
 		["lightroomApplication.outputSharpening"] = 3,
+
 		["metadata.groupDescription.value"] = "",
 		["metadata.event.value"] = "bandXaargau 2013",
 		["metadata.clubName.value"] = "Stadt Name",
@@ -151,22 +152,23 @@ return {
 			value = "{{com.adobe.copyright}}",
 		},
 	},
-        properties = {
-                perImage = {
-                        {
-                                id = 'title',
-                                title = LOC "$$$/WPG/HTML/CSS/properties/ImageTitle=Title",
-                        },
-                        {
-                                id = 'description',
-                                title = LOC "$$$/WPG/HTML/CSS/properties/ImageCaption=Caption",
-                        },
-                        {
-                                id = 'copyright',
-                                title = LOC "$$$/WPG/HTML/CSS/properties/ImageCopyright=Copyright",
-                        },
-                },
-        },
+	
+	properties = {
+		perImage = {
+			{
+				id = 'title',
+				title = LOC "$$$/WPG/HTML/CSS/properties/ImageTitle=Title",
+			},
+			{
+				id = 'description',
+				title = LOC "$$$/WPG/HTML/CSS/properties/ImageCaption=Caption",
+			},
+			{
+				id = 'copyright',
+				title = LOC "$$$/WPG/HTML/CSS/properties/ImageCopyright=Copyright",
+			},
+		},
+	},
 
 	iconicPreview = {
 		flashMovie = 'resources/flash_gallery_preview.swf',
@@ -184,6 +186,7 @@ return {
 			return iconicData
 		end,
 	},
+
 	views = function( controller, f )
 		local LrView = import 'LrView'
 		local bind = LrView.bind
