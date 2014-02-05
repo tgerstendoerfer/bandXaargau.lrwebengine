@@ -1,4 +1,5 @@
 <%
+    local others = model.nonCSS.imageBase
     local mySize = "thumb"
 %>
 <!DOCTYPE html>
@@ -67,8 +68,8 @@ window.AgOnLoad = function() {
 <lr:ThumbnailGrid>
   <lr:GridPhotoCell>
     <div class="thumbnail"><div style="padding-top: <%= math.floor((model.photoSizes.thumb.height + 20 - (image.renditions.thumb.height)) / 2) %>px;"
-      ><a href="large/<%= image.exportFilename %>.jpg" title="$image.metadata.title"
-        ><img src="thumb/<%= image.exportFilename %>.jpg"
+      ><a href="$others/large/<%= image.exportFilename %>.jpg" title="$image.metadata.title"
+        ><img src="$others/thumb/<%= image.exportFilename %>.jpg"
               id="ID<%= image.imageID %>_thumb"
               width="$image.renditions.thumb.width"
               height="$image.renditions.thumb.height"
