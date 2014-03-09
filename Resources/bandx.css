@@ -4,6 +4,17 @@
  * Adapted by Thomas Gerstendoerfer thomas@gerstendoerfer.com 
  */
 
+@font-face {
+	font-family: 'bandxaargauBold';
+	src: url('http://www.bandxaargau.ch/wp-content/themes/band-x/images/fonts/bxa2014.eot');
+	src: url('http://www.bandxaargau.ch/wp-content/themes/band-x/images/fonts/bxa2014?#iefix') format('embedded-opentype'),
+	     url('http://www.bandxaargau.ch/wp-content/themes/band-x/images/fonts/bxa2014.woff') format('woff'),
+	     url('http://www.bandxaargau.ch/wp-content/themes/band-x/images/fonts/bxa2014.ttf') format('truetype'),
+	     url('http://www.bandxaargau.ch/wp-content/themes/band-x/images/fonts/bxa2014.svg#bxa2014') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
 body {
 	color: #666;
 	background-color: #fff;
@@ -35,8 +46,10 @@ body {
 }
 
 h1 {
-	color: #000;
-	font-size: 12pt;
+	color: rgb(72, 156, 191);
+	font-family: 'bandxaargauBold', Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18pt;
 	text-transform: uppercase;
 }
 
