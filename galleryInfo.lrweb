@@ -26,6 +26,7 @@ return {
 		["lightroomApplication.outputSharpening"] = 3,
 
 		["metadata.groupDescription.value"] = "",
+		["metadata.fbAppId.value"] = "168146516534628",
 		["metadata.event.value"] = "bandXaargau 2014",
 		["metadata.clubName.value"] = "Stadt Name",
 		["metadata.date.value"] = "dd. März 2014",

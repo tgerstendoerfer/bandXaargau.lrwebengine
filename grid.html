@@ -9,6 +9,21 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>$model.metadata.event.value - $model.metadata.clubName.value - $model.metadata.date.value</title>
+
+<meta property="og:site_name" content="$model.metadata.event.value" />
+<meta property="og:title" content="$title" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="fb:app_id" content="$model.metadata.fbAppId.value" />
+<meta property="og:description" content="$model.metadata.groupDescription.value" />
+<meta name="description" content="$model.metadata.groupDescription.value" />
+
+<lr:ThumbnailGrid>
+<lr:GridPhotoCell>
+<meta property="og:image" content="large/<%= image.exportFilename %>.jpg" />
+</lr:GridPhotoCell>
+</lr:ThumbnailGrid>
+
 <link rel="stylesheet" href="resources/bandx.css" >
 <link rel="stylesheet" href="resources/photoswipe.css">
 <script type="text/javascript" src="resources/klass.min.js"></script>
