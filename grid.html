@@ -1,5 +1,6 @@
 <%
     local mySize = "thumb"
+    local title = "Fotos " .. $model.metadata.clubName.value .. " (" .. $model.metadata.date.value .. ")"
 %>
 <!DOCTYPE html>
 <html lang="de">
@@ -58,10 +59,7 @@ window.AgOnLoad = function() {
 <% --[[ The main HTML page begins here ]] %>
 <body>
 
-<h1>$model.metadata.event.value
-  &ndash; <span onclick="clickTarget( this, 'metadata.clubName.value' );" id="metadata.clubName.value">$model.metadata.clubName.value</span>
-  &ndash; <span onclick="clickTarget( this, 'metadata.date.value' );" id="metadata.date.value">$model.metadata.date.value</span>
-</h1>
+<h1>$title</h1>
 <p onclick="clickTarget( this, 'metadata.groupDescription.value' );" id="metadata.groupDescription.value" class="textColor">$model.metadata.groupDescription.value</p>
 
 <lr:ThumbnailGrid>
